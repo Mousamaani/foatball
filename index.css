@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #143231;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 40px;
+    background-color: #a8925d;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .logo img{
+    width: 75px;
+    height: 75px;
+  } 
+  .nav-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-buttons button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .nav-buttons button:hover {
+    color: #143231;
+    transform: matrix();
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 0 20px 5px #143231;
+  }
+  
+  .share-container {
+    position: relative;
+    display: inline-block;
+}
+
+.share-icon {
+    background-color: #143231;
+    color: white;
+    padding: 15px 25px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.share-icon:hover {
+    background-color: #a8925d;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #143231;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1000;
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 15px;
+    background: #a8925d;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #fff;
+    color: #143231;
+    transform: scale(1.1);
+}
+
+.share-container:hover .social-icons {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+@keyframes slideUpFade {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.social-icons a {
+    animation: slideUpFade 0.4s ease forwards;
+}
+
+.social-icons a:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.social-icons a:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.social-icons a:nth-child(3) {
+    animation-delay: 0.2s;
+}
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  .image-container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .image-row {
+    display: flex;
+    margin-left: 70px;
+    margin-right: 70px;
+    justify-content: space-between;
+  }
+  
+  .image-row img {
+    width: 23%;
+    height: 21%;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 0 20px 5px #a8925d; 
+  }
+  
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    padding: 120px;
+    background: linear-gradient(360deg, #143231, #a8925d);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+}
+
+.stat {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+    transform: scale(1.1);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.stat-number:hover {
+    color: #143231;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.2);
+}
+
+.stat-label {
+    font-size: 1.7rem;
+    margin-top: 5px;
+}
+
+/* فاصل زخرفي */
+.decorative-separator {
+    width: 3px;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, #143231, transparent);
+    position: relative;
+}
+
+.decorative-separator::before,
+.decorative-separator::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.decorative-separator::before {
+    top: -20px;
+}
+
+.decorative-separator::after {
+    bottom: -20px;
+}
+
+.image-container h2{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 52px;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ color: #a8925d;
+ text-shadow: 0 3px 2px #fff;
+}
+
+
+.contact-container {
+  background-color: #143231;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 110px;
+  max-width: 1200;
+  width: 100%;
+  text-align: center;
+
+  /* الرسوم المتحركة */
+  animation: slide-in 1s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* الأنيميشن على النص */
+.contact-container h2 {
+  margin-bottom: 15px;
+  color: #a8925d;
+  animation: fade-in 1.5s ease-out 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.contact-container p {
+  margin: 8px 0;
+  color: #a8925d;
+  animation: fade-in 1.5s ease-out 0.7s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.contact-container a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  background-color: #a8925d;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  animation: fade-in 1.5s ease-out 0.9s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+/* تأثير عند تمرير الماوس */
+.contact-container a:hover {
+  background-color: #fff;
+  color: #143231;
+}
+
+/* تعريف الرسوم المتحركة */
+@keyframes slide-in {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
