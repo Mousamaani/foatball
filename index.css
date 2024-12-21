@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #143231;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 40px;
+    background-color: #a8925d;
+    color: white;
+  }
+  /*the logo in header*/
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .logo img{
+    width: 75px;
+    height: 75px;
+  } 
+  /*the buttons in header*/
+  .nav-buttons  {
+    display: flex;
+    gap: 15px;
+  }
+  .nav-buttons pre{
+     font-size: 55px;
+    font-family: almarai;
+    text-shadow: 3px 3px 0 #446362, 5px 5px 5px #446362;
+  }
+ 
+  /*sochal media in header*/
+  .share-container {
+    position: relative;
+    display: inline-block;
+}
+
+.share-icon {
+    background-color: #143231;
+    color: white;
+    padding: 15px 25px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.share-icon:hover {
+    background-color: #a8925d;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #143231;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1000;
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 15px;
+    background: #a8925d;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #fff;
+    color: #143231;
+    transform: scale(1.1);
+}
+
+.share-container:hover .social-icons {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+@keyframes slideUpFade {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.social-icons a {
+    animation: slideUpFade 0.4s ease forwards;
+}
+
+.social-icons a:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.social-icons a:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.social-icons a:nth-child(3) {
+    animation-delay: 0.2s;
+}
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /*home photo and text name team*/
+
+  .homephoto {
+    position: relative;
+    width: 100%;
+    height: 600px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+  }
+  
+  .homephoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    margin-top:100px;
+  }
+  
+  .left-text, .right-text {
+    position: absolute;
+    top: 90%; 
+    transform: translateY(-50%);
+    font-family: almarai;
+    font-size: 70px;
+    font-weight: bold;
+    color: #A8925D;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    opacity: 0; 
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+  
+  .left-text {
+    left: -100px; 
+    animation-name: slideInLeft;
+  }
+  
+  .right-text {
+    right: -100px; 
+    animation-name: slideInRight;
+  }
+  
+  @keyframes slideInLeft {
+    0% {
+      left: -100px;
+      opacity: 0;
+    }
+    100% {
+      left: 630px; 
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    0% {
+      right: -100px;
+      opacity: 0;
+    }
+    100% {
+      right: 630px; 
+      opacity: 1;
+    }
+  }
+/*paths in program*/
+  .image-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color:#daeff0 ;
+  }
+  
+  .image-row {
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    justify-content: space-between;
+ 
+  }
+  
+  .image-row img {
+    width: 75%;
+    height: 70%;
+    transition: transform 0.3s, box-shadow 0.4s;
+    border-radius: 50px 50px 50px 50px
+  }
+  
+  .imagepaths:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 0 20px 15px #446362; 
+  }
+  .image-item {
+    text-align: center;
+    margin: 10px; /* مسافة بين العناصر */
+  }
+  
+  .imagepaths {
+    display: block;
+    margin: 0 auto;
+    width: 180px;
+    height: 180px;
+  }
+  
+  .imgdescribtion {
+    margin-top: 50px;
+    font-size: 16px;
+    font-size: 35px;
+    color: #143231;
+  }
+ 
+/*the contact the team*/
+
+
+.contact-container {
+  background-color: #143231;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 110px;
+  max-width: 1200;
+  width: 100%;
+  text-align: center;
+  animation: slide-in 1s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.contact-container h2 {
+  margin-bottom: 15px;
+  color: #a8925d;
+  animation: fade-in 1.5s ease-out 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.contact-container p {
+  margin: 8px 0;
+  color: #a8925d;
+  animation: fade-in 1.5s ease-out 0.7s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.contact-container a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  background-color: #a8925d;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  animation: fade-in 1.5s ease-out 0.9s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.contact-container a:hover {
+  background-color: #fff;
+  color: #143231;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*the end website*/
+footer{
+  background-color: #A8925D;
+  color: #143231;
+  padding: 25px 0;
+  bottom: 0;      
+  width: 100%;     
+  text-align: center;
+  font-size: 1.25rem;
+  z-index: 1000; 
+}
